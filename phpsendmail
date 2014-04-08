@@ -1,0 +1,19 @@
+#!/usr/bin/php
+<?php
+
+define('OUTPUT_PATH', '/tmp/phpmail/');
+
+date_default_timezone_set("Europe/Zurich");
+
+$file = OUTPUT_PATH.date('Y-m-d_H-i-s').'_mail.eml';
+
+// read email content
+$handle = fopen('php://stdin', 'r');
+while(!feof($handle)) 
+{
+    $buf = trim(fgets($handle));
+    $content .= $buf . "\r\n";
+}
+
+// write to file
+file_put_contents($file, $content, FILE_APPEND);
