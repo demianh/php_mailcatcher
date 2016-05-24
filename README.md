@@ -2,7 +2,7 @@ php_mailcatcher
 ===============
 ### How it works
 
-Thsi is a simple replacement for the sendmail binary that does not send mails but writes them to the filesystem.
+This is a simple replacement for the sendmail binary that does not send mails but writes them to the filesystem.
 
 ### How to install
 
