@@ -5,7 +5,8 @@ define('OUTPUT_PATH', '/tmp/phpmail/');
 
 date_default_timezone_set("Europe/Zurich");
 
-$file = OUTPUT_PATH.date('Y-m-d_H-i-s').'_mail.eml';
+$ms = round((microtime(true) - time()) * 100000);
+$file = OUTPUT_PATH.date('Y-m-d_H-i-s').'-'.$ms.'_mail.eml';
 
 // read email content
 $handle = fopen('php://stdin', 'r');
